@@ -99,7 +99,7 @@ animateElements.forEach(el => {
 });
 
 // Form submission handling
-const contactForm = document.querySelector('.contact-form form');
+const contactForm = document.querySelector('#contactForm');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -121,9 +121,19 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
     
-    // Simulate form submission
-    showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
-    contactForm.reset();
+    // Create mailto link with form data
+    const mailtoLink = `mailto:ajshaz813@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    showNotification('Opening your email client... Please send the message to complete your inquiry.', 'success');
+    
+    // Reset form after a short delay
+    setTimeout(() => {
+        contactForm.reset();
+    }, 2000);
 });
 
 // Email validation function
