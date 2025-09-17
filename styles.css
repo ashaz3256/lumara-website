@@ -422,118 +422,71 @@ body {
     font-weight: bold;
 }
 
-/* Featured Project Section */
-.featured-project {
+/* Project Showcase Sections */
+.project-showcase,
+.sports-showcase,
+.lumara-auto-showcase {
     padding: 6rem 0;
+    background: white;
+}
+
+.sports-showcase {
+    background: #f8fafc;
+}
+
+.lumara-auto-showcase {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    position: relative;
-    overflow: hidden;
 }
 
-.featured-project::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
-    background-size: cover;
-}
-
-.featured-content {
+.project-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 
-.featured-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.project-showcase {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    animation: float 6s ease-in-out infinite;
-}
-
-.project-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: #ffd700;
-}
-
-.project-badge {
-    background: #ffd700;
+.project-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
     color: #333;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
 }
 
-.featured-details h3 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+.lumara-auto-showcase .project-info h2 {
     color: white;
 }
 
-.project-tagline {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    line-height: 1.6;
-}
-
-.project-features h4,
-.tech-stack h4 {
+.project-info h3 {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #ffd700;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0.8rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-}
-
-.feature-item i {
-    color: #ffd700;
-    font-size: 1.2rem;
-    width: 20px;
-}
-
-.feature-item span {
-    font-size: 0.9rem;
+    color: #6366f1;
+    margin-bottom: 1.5rem;
     font-weight: 500;
+}
+
+.lumara-auto-showcase .project-info h3 {
+    color: #ffd700;
+}
+
+.project-info p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: #666;
+}
+
+.lumara-auto-showcase .project-info p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-stack h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.lumara-auto-showcase .tech-stack h4 {
+    color: #ffd700;
 }
 
 .tech-tags {
@@ -544,13 +497,47 @@ body {
 }
 
 .tech-tag {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: #f1f5f9;
+    color: #6366f1;
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
+    border: 1px solid #e2e8f0;
+}
+
+.lumara-auto-showcase .tech-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.lumara-auto-showcase .features-list li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.features-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+}
+
+.lumara-auto-showcase .features-list li::before {
+    color: #ffd700;
 }
 
 .project-links {
@@ -559,14 +546,120 @@ body {
     flex-wrap: wrap;
 }
 
-.project-links .btn {
-    display: flex;
+.project-link {
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    padding: 12px 24px;
+    background: #6366f1;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.project-links .btn i {
-    font-size: 1rem;
+.project-link:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
+
+.lumara-auto-showcase .project-link {
+    background: #ffd700;
+    color: #333;
+}
+
+.lumara-auto-showcase .project-link:hover {
+    background: #fbbf24;
+}
+
+.project-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-mockup {
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.lumara-auto-showcase .project-mockup {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mockup-content {
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mockup-header h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.lumara-auto-showcase .mockup-header h4 {
+    color: white;
+}
+
+.mockup-header p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.lumara-auto-showcase .mockup-header p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mockup-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mockup-stat {
+    text-align: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.lumara-auto-showcase .mockup-stat {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mockup-stat h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #6366f1;
+    margin-bottom: 0.25rem;
+}
+
+.lumara-auto-showcase .mockup-stat h5 {
+    color: #ffd700;
+}
+
+.mockup-stat p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+.lumara-auto-showcase .mockup-stat p {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Portfolio Section */
@@ -964,6 +1057,21 @@ body {
 
     .project-links {
         justify-content: center;
+    }
+
+    .project-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .project-mockup {
+        width: 250px;
+        height: 350px;
+    }
+
+    .project-info h2 {
+        font-size: 2rem;
     }
 }
 
